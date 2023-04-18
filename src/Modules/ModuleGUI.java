@@ -10,18 +10,18 @@ public class ModuleGUI {
 
     private JFrame frame;
     private JTextField answer;
-    public void main(Event<T> event) {
+    public <T> void main(Class<T> event) {
         this.frame = new JFrame("CTF - Capture the Flag");
         this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.frame.setSize(300, 300);
         this.frame.setLayout(null);
 
-        JLabel title = new JLabel(moduleTitle);
+        JLabel title = new JLabel(event.getModuleTitle());
         title.setBounds(100, 50, 100, 40);
         this.frame.add(title);
 
 
-        if (textField) {
+        if (eventtextField) {
             answer = new JTextField("");
             answer.setBounds(100, 100, 100, 40);
             this.frame.add(answer);

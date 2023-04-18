@@ -4,10 +4,21 @@ import Modules.RunModule;
 import javax.swing.*;
 import java.awt.event.*;
 
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import java.io.File;
+
 public class CTFSelectScreen {
     private JFrame frame;
 
     public void main(String[] args) {
+
+        Set<String> Classes = getClasses("src/Modules/Event");
+        System.out.printf(Classes.toString());
+        
+        //x = Class.forName("Modules.Event.FindIP");
+
         this.frame = new JFrame("CTF - Capture the Flag");
         this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.frame.setSize(300, 500);
@@ -29,6 +40,19 @@ public class CTFSelectScreen {
         this.frame.add(task3);
 
         this.frame.setVisible(true);
+    }
+
+    private Set<String> getClasses(String dir) {
+        return Stream.of(new File(dir).listFiles())
+                .filter(file -> !file.isDirectory())
+                .map(File::getName)
+                .collect(Collectors.toSet());
+    }
+
+    private Set<String> getCleanClasses(Set<String> classes) {
+        return classes.stream()
+                .map(s -> s.substring(0, s.length() - 6))
+                .collect(Collectors.toSet());
     }
 
     private class ButtonListener implements ActionListener {
