@@ -1,6 +1,4 @@
-package Modules.Events;
 
-import Modules.RunModule;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -11,13 +9,16 @@ import java.net.Socket;
 
 public class FindIP{
 
+    private CTFSelectScreen ctf;
     private JFrame frame;
     private JTextField answer;
     private Event event = new Event();
+    private JLabel incorrect;
 
-    public FindIP() {
+    public FindIP(CTFSelectScreen CTF) {
         event.setPoints(20);
         event.setSuccess(false);
+        this.ctf = CTF;
     }
 
     public Event getEvent() {
@@ -30,13 +31,17 @@ public class FindIP{
 
     public void main() {
         this.frame = new JFrame("CTF - Capture the Flag");
-        this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.frame.setSize(300, 300);
         this.frame.setLayout(null);
 
         JLabel title = new JLabel("Find the IP");
         title.setBounds(100, 50, 100, 40);
         this.frame.add(title);
+
+        this.incorrect = new JLabel("");
+        this.incorrect.setBounds(100, 10, 100, 40);
+        this.frame.add(this.incorrect);
 
 
 
@@ -48,7 +53,8 @@ public class FindIP{
 
         JButton submit = new JButton("Submit");
         submit.setBounds(100, 150, 100, 40);
-        submit.setActionCommand("Submit");
+        submit.setActionCommand("1");
+        submit.addActionListener(new ButtonListener());
         this.frame.add(submit);
 
 
@@ -63,8 +69,10 @@ public class FindIP{
         correctIP = correctIP.replaceAll("/","");
 
         if (ip.equals(correctIP)) {
+            System.out.println("I am here");
             return true;
         } else {
+            System.out.println("oh dear");
             return false;
         }
     }
@@ -76,19 +84,39 @@ public class FindIP{
         return socket.getLocalAddress().toString();
     }
 
+    private void runCheck() throws IOException, InterruptedException {
+        boolean success = checkIP(answer.getText());
+        if (success) {
+            event.setSuccess(true);
+            updatePoints();
+            this.incorrect.setText("Correct!");
+
+            this.frame.setVisible(false);
+            //JOptionPane.showMessageDialog(null, "Correct!");
+        } else {
+            this.incorrect.setText("Incorrect!");
+            //JOptionPane.showMessageDialog(null, "Incorrect!");
+        }
+    }
+
+    private void updatePoints() {
+        ctf.setPoints(ctf.getPoints() + event.getPoints());
+    }
+
     private class ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             String command = e.getActionCommand();
+            System.out.println("oh dear1");
+            System.out.println(command);
             boolean success = false;
             if (command.equals("1")) {
-                success = RunModule.runModule();
-                if (success) {
-                    // do something
+                try {
+                    runCheck();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                } catch (InterruptedException ex) {
+                    throw new RuntimeException(ex);
                 }
-            } else if (command.equals("2")) {
-                // do something
-            } else if (command.equals("3")) {
-
             }
         }
     }

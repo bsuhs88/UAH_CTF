@@ -10,7 +10,7 @@ public class Main {
         // Press ⌥⏎ with your caret at the highlighted text to see how
         // IntelliJ IDEA suggests fixing it.
         MainGUI mainGUI = new MainGUI();
-        mainGUI.main(args);
+        mainGUI.main();
         System.out.printf("Hello and welcome!");
 
         // Press ⌃R or click the green arrow button in the gutter to run the code.
