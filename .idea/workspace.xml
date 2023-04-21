@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca8163f5-95e6-4df0-b7c5-608a09d6e16b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Modules/Events/Event.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Modules/Events/FindIP.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CTFSelectScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CTFSelectScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/ModuleGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/ModuleGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modules/Event/Event.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modules/Event/FindIP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modules/ModuleGUI.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modules/RunModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modules/RunModule.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
