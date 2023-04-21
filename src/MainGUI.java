@@ -6,7 +6,7 @@ public class MainGUI {
     private User user;
     private JTextField Username;
 
-    public void main(String[] args) {
+    public void main() {
         this.frame = new JFrame("CTF - Capture the Flag");
         this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.frame.setSize(300, 300);
@@ -39,7 +39,7 @@ public class MainGUI {
             if (command.equals("Login")) {
                 user = new User(Username.getText(), "password");
                 CTFSelectScreen ctf = new CTFSelectScreen();
-                ctf.main(new String[0]);
+                ctf.main();
                 frame.setVisible(false);
             } else if (command.equals("Register")) {
                 // do something

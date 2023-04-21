@@ -1,5 +1,3 @@
-package Modules.Events;
-
 public class Event {
     private boolean success;
     private int points;
