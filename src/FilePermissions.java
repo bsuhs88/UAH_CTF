@@ -94,30 +94,28 @@ public class FilePermissions {
         }
         return result;
     }
-    private boolean checkFile() throws IOException, InterruptedException {
+    private boolean checkFile() {
         String fileName = System.getProperty("user.home") + "/flag.txt";
         setCurrentDir();
-        Path p = Paths.get(fileName);
+
         File f = new File(fileName).getAbsoluteFile();
         System.out.println(System.getProperty("user.dir"));
         System.out.println(System.getProperty("user.home"));
         System.out.println("HERE!!!!");
-        if(f.exists() && !f.isDirectory()) {
-            System.out.println("HERE123");
-            Scanner s = new Scanner(f);
-            while (s.hasNextLine()) {
-                String line = s.nextLine();
-                if (checkIP(line)) {
-                    return true;
+        if (f.exists() && !f.isDirectory()) {
+            if (f.canRead()) {
+                if (f.canWrite()) {
+                    if (f.canExecute()) {
+                        System.out.println("HERE");
+                        return true;
+                    }
                 }
             }
-            return false;
-        } else {
-            return false;
         }
+        return false;
     }
 
-    private void runCheck() throws IOException, InterruptedException {
+    private void runCheck()  {
         boolean success = checkFile();
         if (success) {
             event.setSuccess(true);
@@ -140,13 +138,7 @@ public class FilePermissions {
         public void actionPerformed(ActionEvent e) {
             String command = e.getActionCommand();
             if (command.equals("1")) {
-                try {
-                    runCheck();
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                } catch (InterruptedException ex) {
-                    throw new RuntimeException(ex);
-                }
+                runCheck();
             }
         }
     }

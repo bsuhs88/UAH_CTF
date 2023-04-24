@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca8163f5-95e6-4df0-b7c5-608a09d6e16b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/FilePermissions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fileExists.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CTFSelectScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CTFSelectScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/Events/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/Events/FindIP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FindIP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modules/RunModule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FilePermissions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FilePermissions.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,14 +41,14 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "420",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/bsuhs/UAHCTF/UAH_CTF",
+    "last_opened_file_path": "/Users/bes0005/UAH_CTF",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "/Users/bes0005/IdeaProjects/CTF/src/Main.java",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "project.propCompiler",
